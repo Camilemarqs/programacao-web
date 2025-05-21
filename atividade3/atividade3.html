@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Cultura do Nordeste</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Variáveis para as cores */
+        :root {
+            --cor-primaria: #e67e22;
+            --cor-secundaria: #d35400;
+            --cor-texto: #333;
+            --cor-fundo: #fff;
+            --cor-navbar: #8b4513;
+        }
+
+        /* Modo escuro */
+        [data-tema="escuro"] {
+            --cor-primaria: #f39c12;
+            --cor-secundaria: #e67e22;
+            --cor-texto: #ecf0f1;
+            --cor-fundo: #2c3e50;
+            --cor-navbar: #34495e;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            transition: all 0.3s ease;
+        }
+
+        /* Cabeçalho */
+        header {
+            padding: 40px;
+            text-align: center;
+            background: var(--cor-primaria);
+            color: white;
+        }
+
+        /* Barra de navegação */
+        nav {
+            position: sticky;
+            top: 0;
+            display: flex;
+            background-color: var(--cor-navbar);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 10px;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        nav a:hover {
+            background-color: var(--cor-secundaria);
+        }
+
+        /* Botão de tema */
+        #tema-btn {
+            margin-left: auto;
+            padding: 14px 20px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Layout principal */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Barra lateral */
+        aside {
+            flex: 30%;
+            background-color: var(--cor-fundo);
+            padding: 20px;
+            border-right: 1px solid var(--cor-primaria);
+        }
+
+        /* Conteúdo principal */
+        section {
+            flex: 70%;
+            padding: 20px;
+        }
+
+        /* Imagens */
+        .imagem {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .imagem img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: var(--cor-fundo);
+        }
+
+        .imagem p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--cor-texto);
+        }
+
+        /* Rodapé */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background: var(--cor-primaria);
+            color: white;
+        }
+
+        /* Responsividade */
+        @media screen and (max-width: 700px) {
+            main, nav {   
+                flex-direction: column;
+            }
+        }
+
+        /* Ajuste para as seções com navbar fixa */
+        article {
+            scroll-margin-top: 60px; /* Altura aproximada da navbar */
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho do site -->
+    <header>
+        <h1>Cultura do Nordeste</h1>
+        <p>Descubra as <b>maravilhas</b> da região mais rica em cultura do Brasil!</p>
+    </header>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#culinaria">Culinária</a>
+        <a href="#festas">Festas</a>
+        <a href="#musica">Música</a>
+        <a href="#artesanato">Artesanato</a>
+        <a href="#literatura">Literatura</a>
+        <a href="#praias">Praias</a>
+        <a href="#doces">Doces</a>
+
+
+
+
+        <button id="tema-btn">🌙 Modo Escuro</button>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Barra lateral -->
+        <aside>
+            <h2>Sobre o Nordeste</h2>
+            <h5>Foto do São João:</h5>
+            <div class="imagem">
+                <img src="fogueira-na-festa-junina.webp" alt="Fogueira de São João">
+                <p>Fogueira de São João</p>
+            </div>
+            <p>O Nordeste brasileiro é uma região rica em cultura, tradições e história. Com nove estados, cada um com suas particularidades e encantos.</p>
+            <h3>Curiosidades</h3>
+            <p>Você sabia que o forró nasceu no Nordeste?</p>
+            <div class="imagem">
+                <img src="baiao.jpg" alt="Baião">
+                <p>Baião</p>
+            </div><br>
+            <div class="imagem">
+                <img src="xaxado.avif" alt="Xaxado">
+                <p>Xaxado</p>
+            </div><br>
+            <div class="imagem">
+                <img src="vaquejada.jpg" alt="vaquejada">
+                <p>Vaquejada</p>
+            </div>
+        </aside>
+
+        <!-- Seção principal -->
+        <section>
+            <article id="inicio">
+                <h2>CULINÁRIA NORDESTINA</h2>
+                <div class="imagem">
+                    <img src="buchada-de-bode.jpeg" alt="Buchada de Bode">
+                    <p>Buchada de Bode</p>
+                </div>
+                <p>Uma das mais famosas iguarias do Nordeste!</p>
+                <p>A culinária nordestina é uma das mais ricas do Brasil, com pratos como buchada de bode, sarapatel, carne de sol, feijão verde, e muito mais. Cada estado tem suas especialidades e ingredientes típicos.</p>
+            </article>
+
+            <article id="festas">
+                <h2>FESTAS POPULARES</h2>
+                <div class="imagem">
+                    <img src="festa-junina.jpeg" alt="Festa Junina">
+                    <p>São João</p>
+                </div>
+                <p>As festas mais animadas do Brasil!</p>
+                <p>O Nordeste é conhecido por suas festas populares, como o São João, Carnaval de Salvador, Bumba Meu Boi, e muitas outras. Cada festa tem sua história e tradições únicas.</p>
+            </article>
+
+            <article id="musica">
+                <h2>MÚSICA NORDESTINA</h2>
+                <h5>Ritmos tradicionais, 1 de Março, 2024</h5>
+                <div class="imagem">
+                    <img src="forro-pe-de-serra-o-ritmo-do-povo.jpg" alt="Forró Pé de Serra">
+                    <p>Forró Pé de Serra</p>
+                </div>
+                <p>Os ritmos que fazem o Brasil dançar!</p>
+                <p>O Nordeste é o berço de diversos ritmos musicais brasileiros. O forró, com suas origens no século XIX, é um dos mais conhecidos. Outros ritmos importantes incluem o baião, xote, xaxado, coco e maracatu. Grandes nomes como Luiz Gonzaga, Dominguinhos e Alceu Valença ajudaram a popularizar esses ritmos pelo Brasil.</p>
+            </article>
+
+            <article id="artesanato">
+                <h2>ARTESANATO</h2>
+                <div class="imagem">
+                    <img src="artesanato.jpeg" alt="Renda de Bilro">
+                    <p>Renda de Bilro</p>
+                </div>
+                <p>Arte feita com as mãos!</p>
+                <p>O artesanato nordestino é rico e diversificado. A renda de bilro do Ceará, o barro de Caruaru, as bonecas de barro do Mestre Vitalino, e as redes de dormir são apenas alguns exemplos do artesanato tradicional da região. Cada estado tem suas técnicas e materiais específicos.</p>
+            </article>
+
+            <article id="literatura">
+                <h2>LITERATURA DE CORDEL</h2>
+                <div class="imagem">
+                    <img src="cordeis.png" alt="Cordéis">
+                    <p>Cordéis</p>
+                </div>
+                <p>Histórias em versos!</p>
+                <p>A literatura de cordel é uma manifestação cultural típica do Nordeste. Os folhetos, pendurados em cordas (daí o nome "cordel"), contam histórias em versos, muitas vezes acompanhadas de xilogravuras. Autores como Leandro Gomes de Barros e Patativa do Assaré são referências nesse gênero.</p>
+            </article>
+
+            <article id="praias">
+                <h2>PRAIAS PARADISÍACAS</h2>
+                <div class="imagem">
+                    <img src="porto-de-galinhas-2.webp" alt="Praia de Porto de Galinhas">
+                    <p>Praia de Porto de Galinhas</p>
+                </div>
+                <p>As mais belas praias do Brasil!</p>
+                <p>O Nordeste possui algumas das mais belas praias do Brasil. Porto de Galinhas em Pernambuco, Praia do Forte na Bahia, e Jericoacoara no Ceará são apenas alguns exemplos. Com águas mornas e cristalinas, essas praias atraem turistas do mundo todo.</p>
+            </article>
+
+            <article id="doces">
+                <h2>GASTRONOMIA DOCE</h2>
+                <h5>Sobremesas tradicionais, 25 de Fevereiro, 2024</h5>
+                <div class="imagem">
+                    <img src="bolo.jpeg" alt="Bolo de Rolo">
+                    <p>Bolo de Rolo</p>
+                </div>
+                <p>Doces que contam histórias!</p>
+                <p>A doçaria nordestina é uma verdadeira delícia! O bolo de rolo de Pernambuco, o pé de moleque, a cocada, o queijo coalho com mel de engenho, e o cartola (banana frita com queijo e canela) são algumas das sobremesas típicas que fazem sucesso em toda a região.</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <h2>Feito com amor para o Nordeste</h2>
+    </footer>
+
+    <!-- Script para o modo escuro -->
+    <script>
+        // Botão de tema escuro
+        const temaBtn = document.getElementById('tema-btn');
+        temaBtn.addEventListener('click', () => {
+            document.body.dataset.tema = document.body.dataset.tema === 'escuro' ? 'claro' : 'escuro';
+            temaBtn.textContent = document.body.dataset.tema === 'escuro' ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+        });
+    </script>
+</body>
+</html>
+
+
