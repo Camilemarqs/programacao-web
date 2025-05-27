@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTÃO 04 E 05</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .notification-card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 250px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .card-content h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content"> 
+    <h1>teste 01</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eum esse dolor iste! Error beatae maiores sed ab cumque? Et est at officiis ullam, commodi tempora tempore ratione. Eum, at?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae repellat, qui voluptas tempore, quis dicta optio est exercitationem inventore dolorem, esse ut deserunt minus eos eveniet aliquam architecto placeat voluptatibus?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas reprehenderit dolorem id modi alias, maxime molestiae recusandae itaque natus quisquam totam temporibus exercitationem in. Ipsa culpa sapiente voluptatem vero deserunt.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, vitae ducimus, nostrum molestias aliquam illo libero delectus quam ad beatae inventore corrupti facilis voluptatum incidunt maxime possimus perspiciatis iusto sit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima alias quibusdam enim cumque, odio voluptates impedit eum inventore culpa aut atque sapiente ipsa debitis officiis ut modi nulla ratione aliquam!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptatem dolorem accusantium aliquid quia dicta, quis a amet provident minus quae est. Assumenda nemo excepturi et similique. Alias, accusamus necessitatibus?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eum esse dolor iste! Error beatae maiores sed ab cumque? Et est at officiis ullam, commodi tempora tempore ratione. Eum, at?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae repellat, qui voluptas tempore, quis dicta optio est exercitationem inventore dolorem, esse ut deserunt minus eos eveniet aliquam architecto placeat voluptatibus?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas reprehenderit dolorem id modi alias, maxime molestiae recusandae itaque natus quisquam totam temporibus exercitationem in. Ipsa culpa sapiente voluptatem vero deserunt.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, vitae ducimus, nostrum molestias aliquam illo libero delectus quam ad beatae inventore corrupti facilis voluptatum incidunt maxime possimus perspiciatis iusto sit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima alias quibusdam enim cumque, odio voluptates impedit eum inventore culpa aut atque sapiente ipsa debitis officiis ut modi nulla ratione aliquam!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptatem dolorem accusantium aliquid quia dicta, quis a amet provident minus quae est. Assumenda nemo excepturi et similique. Alias, accusamus necessitatibus?</p>
+    </div>
+
+    <!-- html para o card de notificação-->
+    <div class="notification-card" id="notificationCard">
+        <div class="card-header">
+            <button class="close-btn" onclick="closeCard()">X</button>
+        </div>
+        <div class="card-content">
+            <h3>Novidade!</h3>
+            <p>Confira nossos novos produtos.</p>
+        </div>
+    </div>
+
+    <!-- função para fechar o card de notificação -->
+    <script>
+    function closeCard() {
+      document.getElementById('notificationCard').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

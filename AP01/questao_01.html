@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 01</title>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color: antiquewhite;
+
+        }
+
+        header, footer{
+            text-align: center;
+            padding: 15px;
+            background-color: rgb(95, 125, 223);
+        }
+
+        main{
+            display:flex;
+            padding: 20px;
+        }
+
+        /* usei o flex-box aqui para organizar o layout */
+        aside{
+            margin: 10px;
+            flex: 30%;
+            padding: 15px;
+            background-color: rgb(184, 194, 228);
+        }
+
+        article{
+            margin: 10px;
+            flex: 70%;
+            padding: 15px;
+            background-color: rgb(137, 159, 231);
+        }
+
+        nav a{
+            display: block;
+            margin: 5px 0;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            color: white;
+        }
+
+        /*div de tamanho fixo*/
+        .imagem_simulada{
+            width: 100%;
+            height: 120px;
+            margin: 10px 0;
+            background-color:  rgb(184, 194, 228);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /*estilização*/
+        @media (max-width: 400px) {
+            main {
+                flex-direction: column;
+            }
+
+            nav, article {
+                flex: 1 0 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+<!-- USEI O HTML SEMANTICO: HEADER, ASIDE, NAV, MAIN, ARTICLE-->
+    <header>
+        <h2>desenvolvimento de software WEB</h2>
+    </header>
+    
+    <main>
+        <aside>
+            <h2>[MENU LATERAL]</h2>
+            <nav>
+                <a href="">LINK 1</a>
+                <a href="">LINK 2</a>
+                <a href="">LINK 3</a>
+                <a href="">LINK 4</a>
+            </nav>
+        </aside>
+
+        <article>
+            <h2>[CONTEÚDO]</h2>
+
+            <h3>INTRODUÇÃO AO HTML</h3>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sed nulla cupiditate fugit esse? Iusto ipsa doloribus vero saepe dolor quisquam sint adipisci debitis suscipit ea, quod error ipsam accusamus.</p>
+            <div class = imagem_simulada>[imagem.png]</div>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum mollitia veniam repellat officia. Reprehenderit voluptatem recusandae quisquam enim impedit animi optio officiis sit atque, voluptas tenetur quos nobis voluptatum corporis?</p>
+            <div class = imagem_simulada>[imagem.png]</div>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae velit quos est debitis incidunt adipisci nemo laborum illum sint veniam, voluptatibus in dolore harum quisquam enim! Cum fugiat dolore mollitia?</p>
+            <div class="imagem_simulada">[imagem.png]</div>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            <a href="mailto:fulanodetal@ufc.br">fulanodetal@ufc.br</a>
+        </p>
+        <p>2025.1</p>
+        <p>Todos os direitos reservados</p>
+        
+    </footer>
+</body>
+</html>
