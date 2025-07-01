@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19 - Estados Brasileiros</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .acima-media {
+            background-color: #ffdddd;
+        }
+        .destaque {
+            font-weight: bold;
+            background-color: #d0f0c0;
+        }
+    </style>
+</head>
+<body>
+    <h1>COVID-19 - Estados Brasileiros</h1>
+    <table id="tabela-estados">
+        <thead>
+            <tr>
+                <th>Nome do Estado</th>
+                <th>Abreviação</th>
+                <th>Número de Casos</th>
+                <th>Número de Suspeitos</th>
+                <th>Número de Falecimentos</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><strong>Médias</strong></td>
+                <td id="media-casos"></td>
+                <td id="media-suspeitos"></td>
+                <td id="media-obitos"></td>
+            </tr>
+            <tr>
+                <td colspan="5" id="maior-rel"></td>
+            </tr>
+            <tr>
+                <td colspan="5" id="menor-rel"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        async function carregarDados() {
+            const resposta = await fetch("https://covid19-brazil-api.vercel.app/api/report/v1");
+            const dados = await resposta.json();
+            const estados = dados.data;
+
+            const corpo = document.querySelector("#tabela-estados tbody");
+
+            let totalCasos = 0, totalSuspeitos = 0, totalObitos = 0;
+            let maiorRel = { estado: '', valor: 0 };
+            let menorRel = { estado: '', valor: Infinity };
+
+            estados.forEach(estado => {
+                const { state, uf, cases, suspects, deaths } = estado;
+                const relacao = deaths > 0 ? (cases / deaths) : 0;
+
+                totalCasos += cases;
+                totalSuspeitos += suspects;
+                totalObitos += deaths;
+
+                const linha = document.createElement("tr");
+                linha.innerHTML = `
+                    <td>${state}</td>
+                    <td>${uf}</td>
+                    <td>${cases}</td>
+                    <td>${suspects}</td>
+                    <td class="obitos">${deaths}</td>
+                `;
+                corpo.appendChild(linha);
+
+                if (relacao > maiorRel.valor) {
+                    maiorRel = { estado: state, valor: relacao };
+                }
+                if (deaths > 0 && relacao < menorRel.valor) {
+                    menorRel = { estado: state, valor: relacao };
+                }
+            });
+
+            const mediaCasos = (totalCasos / estados.length).toFixed(2);
+            const mediaSuspeitos = (totalSuspeitos / estados.length).toFixed(2);
+            const mediaObitos = (totalObitos / estados.length).toFixed(2);
+
+            document.getElementById("media-casos").textContent = mediaCasos;
+            document.getElementById("media-suspeitos").textContent = mediaSuspeitos;
+            document.getElementById("media-obitos").textContent = mediaObitos;
+
+            // Destacar linhas com óbitos acima da média
+            document.querySelectorAll("#tabela-estados tbody tr").forEach(linha => {
+                const obitos = parseInt(linha.children[4].textContent);
+                if (obitos > mediaObitos) {
+                    linha.classList.add("acima-media");
+                }
+            });
+
+            document.getElementById("maior-rel").textContent =
+                `Maior relação Casos/Falecimentos: ${maiorRel.estado} (${maiorRel.valor.toFixed(2)})`;
+
+            document.getElementById("menor-rel").textContent =
+                `Menor relação Casos/Falecimentos: ${menorRel.estado} (${menorRel.valor.toFixed(2)})`;
+        }
+
+        carregarDados();
+    </script>
+</body>
+</html>
